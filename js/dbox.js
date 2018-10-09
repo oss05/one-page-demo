@@ -66,7 +66,6 @@
     };
 
     Helper.utils.d3.tip = d3.tip;
-    debugger;
 
     Helper.utils.generateScale = function (data, config) {
       var scale = {};

@@ -1,0 +1,43 @@
+g.y.axis path.domain{
+  stroke: none;
+}
+
+path.domain	g.tick line {
+  stroke: #F4F3F3;
+  stroke-dasharray: 3, 5;
+  stroke-width: 3;
+}
+
+path.domain {
+  stroke-linecap: round;
+  stroke: rgb(247, 47, 11);
+  stroke-width: 0.2rem;
+}
+
+g.x.axis 	g.tick line {
+  stroke: none;
+}
+
+g text {
+  font-family: 'Arial';
+  fill: #666666;
+  font-size: 1rem;
+}
+g text.legend-title {
+  font-family: 'Arial' !important;
+  fill: '#ccc' !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+}
+g.legend text {
+  font-family: 'Arial';
+  fill: #666666;
+  font-size: 1rem;
+}
+g.legend.quantized text {
+  font-family: 'Arial';
+  fill: '#ccc';
+  font-size: 0.95rem;
+  font-weight: 600;
+}
