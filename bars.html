@@ -1,16 +1,15 @@
 <html>
 	<head>
-		<title>Dbox Example</title>
-	</head>
-	<body>
-		<h1>Bars Chart</h1>
-		<div id="chart"></div>
-
+    <title>Dbox Example</title>
+		<link rel="stylesheet" href="css/dbox.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.0/d3-tip.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
 		<script src="js/dbox.js"></script>
-		<link rel="stylesheet" href="css/dbox.css">
+	</head>
+	<body>
+		<h1>Bars Chart</h1>
+		<div id="chart"></div>
 		<script>
 			var data = [
 				{
@@ -75,6 +74,6 @@
 
 			chart.draw();
 
-		</script>
+    </script>
 	</body>
 </html>
