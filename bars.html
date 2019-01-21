@@ -67,7 +67,7 @@
 					raw: data, // Modified data by selectedChart (parse dates or fill NAs)
 				});
 
-			var bars = chart.layer(dbox.bars)
+			var bars = chart.layer(dbox.layer)
 				.x('State')
 				.y('Under 5 Years')
 				.fill('State');
