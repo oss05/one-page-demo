@@ -38,7 +38,8 @@
 
       const svg = d3.select('body').append('svg').attr('width', vm.width + vm.margin.left + vm.margin.right).attr('height', vm.height + vm.margin.top + vm.margin.bottom).append('g').attr('transform', `translate(${vm.margin.left}, ${vm.margin.top})`);
       return svg;
-    };
+    }; // User called
+
 
     Layer.data = function data(dat) {
       const vm = this; // format the data
@@ -50,7 +51,7 @@
 
       vm.x.domain(dat.map(d => d.x));
       vm.y.domain([0, d3.max(dat, d => d.y)]);
-      vm.draw();
+      return vm;
     };
 
     Layer.draw = function draw() {
@@ -59,9 +60,10 @@
       const svg = vm.chart();
       svg.selectAll('.bar').data(vm._data).enter().append('rect').attr('class', 'bar').attr('x', d => vm.x(d.x)).attr('width', vm.x.bandwidth()).attr('y', d => vm.y(d.y)).attr('height', d => vm.height - vm.y(d.y)); // add the x Axis
 
-      vm.svg.append('g').attr('transform', `translate(0,${vm.height})`).call(d3.axisBottom(vm.x)); // add the y Axis
+      svg.append('g').attr('transform', `translate(0,${vm.height})`).call(d3.axisBottom(vm.x)); // add the y Axis
 
-      vm.svg.append('g').call(d3.axisLeft(vm.y));
+      svg.append('g').call(d3.axisLeft(vm.y));
+      return vm;
     };
 
     Layer.config();
