@@ -5,14 +5,14 @@
 }(this, (function (exports,d3) { 'use strict';
 
   /*
-   * Simple Layer Chart
+   * Simple Demo Chart
    */
 
-  function layerPlainD3 () {
-    // Link Layer to the helper object in helper.js
-    const Layer = {};
+  function demo () {
+    // Link Demo to the helper object in helper.js
+    const Demo = {};
 
-    Layer.config = function config() {
+    Demo.config = function config() {
       const vm = this;
       vm.margin = {
         top: 20,
@@ -25,13 +25,13 @@
       vm.scales();
     };
 
-    Layer.scales = function scales() {
+    Demo.scales = function scales() {
       const vm = this;
       vm.x = d3.scaleBand().range([0, vm.width]).padding(0.1);
       vm.y = d3.scaleLinear().range([vm.height, 0]);
     };
 
-    Layer.chart = function chart() {
+    Demo.chart = function chart() {
       const vm = this; // append the svg object to the body of the page
       // append a 'group' element to 'svg'
       // moves the 'group' element to the top left margin
@@ -41,7 +41,7 @@
     }; // User called
 
 
-    Layer.data = function data(dat) {
+    Demo.data = function data(dat) {
       const vm = this; // format the data
 
       dat.forEach(d => {
@@ -54,7 +54,7 @@
       return vm;
     };
 
-    Layer.draw = function draw() {
+    Demo.draw = function draw() {
       const vm = this; // append the rectangles for the bar chart
 
       const svg = vm.chart();
@@ -66,8 +66,8 @@
       return vm;
     };
 
-    Layer.config();
-    return Layer;
+    Demo.config();
+    return Demo;
   }
 
   /*
@@ -79,7 +79,7 @@
    * this package does), let rollup bundle them into your dist file.
    */
 
-  exports.layer = layerPlainD3;
+  exports.demo = demo;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
